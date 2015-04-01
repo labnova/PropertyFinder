@@ -86,6 +86,7 @@ constructor(props) {
 				<View style={styles.flowRight}>
 					<TextInput
 						style={styles.searchInput}
+						value={this.state.searchString}
 						placeholder='Search via name or postcode' />
 						<TouchableHighlight 
 							style={styles.button}
@@ -105,6 +106,13 @@ constructor(props) {
 
 			)
 	}
+
+onSearchTextChanged(event) {
+	console.log('onSearchTextChanged');
+	this.setState({searchString: event.nativeEvent.text});
+	console.log(this.state.searchString);
+}
+
 }
 
 module.exports = SearchPage;
